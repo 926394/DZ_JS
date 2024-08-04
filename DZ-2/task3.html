@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // ЗАДАНИЕ 3
+    // В переменной day лежит какое-то число из интервала от 1 до 31. Определите в какую декаду месяца попадает это число (в первую, вторую или третью).
+
+    // РЕШЕНИЕ
+    // let day = 15;
+    let day = Number(prompt(`Введите число месяца`));
+    if (day <= 10) {
+      console.log('Число попадает в первую декаду месяца');
+    } 
+    else if (day >= 11 && day <=20){ 
+      console.log('Число попадает во вторую декаду месяца');
+    }
+    else {
+      console.log('Число попадает в третью декаду месяца');
+    }
+
+
+  </script>
+
+</body>
+</html>
