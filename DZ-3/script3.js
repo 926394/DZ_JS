@@ -32,4 +32,4 @@
 // }
 // let minNum = Number(prompt('Введите 1 число для проверки'));
 // let minNumI = Number(prompt('Введите 2 число для проверки'));
-// console.log(minNumber(minNum, minNumI));
+// minNumber(minNum, minNumI);
