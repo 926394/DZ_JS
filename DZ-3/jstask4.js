@@ -45,8 +45,3 @@ console.log(addition(numI, numII), division(numI, numII), multiplication(numI, n
 // console.log(difference(numI, numII));
 // console.log(multiplication(numI, numII));
 // console.log(division(numI, numII));
-
-
-
-
-// console.log(minimumNumber(numI, numII, numIII));
