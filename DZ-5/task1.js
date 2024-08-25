@@ -14,6 +14,6 @@ const numbers = {
   let num = 3;
   for (const key in numbers) {
     if (num >= numbers[key]) {
-      console.log(numbers[key]);
+      console.log(numbers[key]); 
     }
   }
