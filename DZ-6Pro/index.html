@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    ```
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title" data-number="100">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text" data-number="50">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" id="super_link" class="card-link">Card link</a>
+        <a href="#" class="card-link" data-number="50">Another link</a>
+      </div>
+    </div>
+
+    <script>
+      // Строгий режим
+      "use strict";
+
+      // 1. Найти по id, используя getElementById, элемент с id равным "super_link" и вывести этот элемент в консоль.
+      const supLinEl = document.getElementById("super_link");
+      console.log(supLinEl);
+      // Эти строчки для моей разминки. Прошу извинить:)
+      // const supEl = document.querySelector('.card-link');
+      // console.log(supEl);
+      //---------------------------------------------------------------------------------------
+      // 2. Внутри всех элементов на странице, которые имеют класс "card-link", поменяйте текст внутри элемента на "ссылка".
+      const cardEll = document.querySelectorAll(".card-link");
+      for (let i = 0; i < cardEll.length; i++) {
+        if (
+          cardEll[i].textContent === "Card link" ||
+          cardEll[i].textContent === "Another link"
+        ) {
+          cardEll[i].textContent = "ссылка";
+          console.log(cardEll[i]);
+        } else {
+          cardEll[i].textContent = "другое значение";
+          console.log(cardEll[i]);
+        }
+      }
+      //---------------------------------------------------------------------------------------
+      // 3. Найти все элементы на странице с классом "card-link", которые лежат в элементе с классом "card-body" и вывести полученную коллекцию в консоль.
+      // Обращение к классу ".card-body"
+      const linkBodyEll = document.querySelector(".card-body");
+      // Обращение внутри класса ".card-body" к элементам с классом "card-link"
+      const childEl = linkBodyEll.getElementsByClassName("card-link");
+      // Вызов всех вложенных элементов из класса ".card-body"
+      console.log(linkBodyEll);
+      // Вызов вложенных элементов с классом ".card-link" из класса ".card-body"
+      console.log(childEl);
+      //-------------------------------------------------------------------------------------
+      // 4. Найти первый попавшийся элемент на странице у которого есть атрибут data-number со значением 50 и вывести его в консоль.
+      const atribytEl = document.querySelector('[data-number = "50"]');
+      console.log(atribytEl);
+      //-------------------------------------------------------------------------------------
+      // 5. Выведите содержимое тега title в консоль.
+      const titleEl = document.getElementsByTagName("title")[0].innerHTML;
+      console.log(titleEl);
+      //-------------------------------------------------------------------------------------
+      // 6. Получите элемент с классом "card-title" и выведите его родительский узел в консоль.
+      const cardTitleEl = document.getElementsByClassName("card-title")[0].parentNode;
+      console.log(cardTitleEl);
+      //-------------------------------------------------------------------------------------
+      // 7. Создайте тегp 'p', запишите внутри него текст "Привет" и добавьте созданный тег в начало элемента, который имеет класс "card".
+
+      const cardEl = document.querySelector(".card");
+      // // Создание тега
+      const tegEl = document.createElement("p");
+      // Запись содержимого в тег 'Р'
+      tegEl.textContent = "Привет";
+      // добавления тега 'Р' в элемент
+      cardEl.prepend(tegEl);
+      // Просмотр
+      const cardClass = document.querySelectorAll(".card")[0].innerHTML;
+      console.log(cardClass);
+      //------------------------------------------------------------------------------------
+      //8. Удалите тег h6 на странице.
+      // Задаем и удаляем тег
+      const removeEl = document.querySelector("h6");
+      removeEl.remove();
+      // Просмотр результата
+      const cardClass1 = document.querySelectorAll(".card")[0].innerHTML;
+      console.log(cardClass1);
+    </script>
+  </body>
+</html>
