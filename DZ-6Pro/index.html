@@ -29,42 +29,60 @@
 
       // 1. Найти по id, используя getElementById, элемент с id равным "super_link" и вывести этот элемент в консоль.
       const supLinEl = document.getElementById("super_link");
-      console.log(supLinEl);
+      // console.log(supLinEl);
       // Эти строчки для моей разминки. Прошу извинить:)
       // const supEl = document.querySelector('.card-link');
       // console.log(supEl);
       //---------------------------------------------------------------------------------------
       // 2. Внутри всех элементов на странице, которые имеют класс "card-link", поменяйте текст внутри элемента на "ссылка".
+      // revision of the assignment
       const cardEll = document.querySelectorAll(".card-link");
-      for (let i = 0; i < cardEll.length; i++) {
-        if (
-          cardEll[i].textContent === "Card link" ||
-          cardEll[i].textContent === "Another link"
-        ) {
-          cardEll[i].textContent = "ссылка";
-          console.log(cardEll[i]);
+      cardEll.forEach(element => {
+        if (element.textContent === "Card link" ||
+          element.textContent === "Another link") 
+          {
+          element.textContent = "ссылка";
+          // console.log(element);
         } else {
-          cardEll[i].textContent = "другое значение";
-          console.log(cardEll[i]);
+          element.textContent = "другое значение";
+          // console.log(element);
         }
-      }
+      });
+
+      // for (let i = 0; i < cardEll.length; i++) {
+      //   if (
+      //     cardEll[i].textContent === "Card link" ||
+      //     cardEll[i].textContent === "Another link"
+      //   ) {
+      //     cardEll[i].textContent = "ссылка";
+      //     console.log(cardEll[i]);
+      //   } else {
+      //     cardEll[i].textContent = "другое значение";
+          // console.log(cardEll[i]);
+      //   }
+      // }
       //---------------------------------------------------------------------------------------
       // 3. Найти все элементы на странице с классом "card-link", которые лежат в элементе с классом "card-body" и вывести полученную коллекцию в консоль.
       // Обращение к классу ".card-body"
-      const linkBodyEll = document.querySelector(".card-body");
+      // const linkBodyEll = document.querySelector(".card-body");
       // Обращение внутри класса ".card-body" к элементам с классом "card-link"
-      const childEl = linkBodyEll.getElementsByClassName("card-link");
+      // const childEl = linkBodyEll.getElementsByClassName("card-link");
+
+      // revision of the assignment
+      const childEl = document.querySelectorAll(".card-body .card-link");
       // Вызов всех вложенных элементов из класса ".card-body"
-      console.log(linkBodyEll);
+      // console.log(linkBodyEll);
       // Вызов вложенных элементов с классом ".card-link" из класса ".card-body"
       console.log(childEl);
       //-------------------------------------------------------------------------------------
       // 4. Найти первый попавшийся элемент на странице у которого есть атрибут data-number со значением 50 и вывести его в консоль.
       const atribytEl = document.querySelector('[data-number = "50"]');
-      console.log(atribytEl);
+      // console.log(atribytEl);
       //-------------------------------------------------------------------------------------
       // 5. Выведите содержимое тега title в консоль.
-      const titleEl = document.getElementsByTagName("title")[0].innerHTML;
+      // const titleEl = document.getElementsByTagName("title")[0].innerHTML;
+      //revision of the assignment
+      const titleEl = document.title;
       console.log(titleEl);
       //-------------------------------------------------------------------------------------
       // 6. Получите элемент с классом "card-title" и выведите его родительский узел в консоль.
@@ -79,7 +97,7 @@
       // Запись содержимого в тег 'Р'
       tegEl.textContent = "Привет";
       // добавления тега 'Р' в элемент
-      cardEl.prepend(tegEl);
+      // cardEl.prepend(tegEl);
       // Просмотр
       const cardClass = document.querySelectorAll(".card")[0].innerHTML;
       console.log(cardClass);
