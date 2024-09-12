@@ -37,7 +37,8 @@
       const classDropIt = document.querySelectorAll(".dropdown-item");
       classDropIt.forEach((element) => {
         if (element.className === "dropdown-item") {
-          element.className += ", super-dropdown";
+          // element.className += ", super-dropdown";
+          element.classList.add("super-dropdown");
           // console.log(element);
         }
       });
@@ -54,34 +55,35 @@
       const classMenu = document.querySelectorAll(".menu");
       classMenu.forEach((element) => {
         element.classList.remove("dropdown-menu");
-        console.log(element);
+        // console.log(element);
       });
 
       // 4. Используя метод insertAdjacentHTML добавьте после div'a с классом "dropdown" следующую разметку:
       // `<a href="#">link</a>`
-      const classDro = document.querySelector(".dropdown");
-      const markup = document.querySelector('div');
+      // const classDro = document.querySelector(".dropdown");
+      // const markup = document.querySelector('div');
+      const markup = document.querySelector("div.dropdown");
       markup.insertAdjacentHTML('afterbegin', '<a href="#">link</a>');
       console.log(markup);
 
       // 5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
       const idReplac = document.getElementById("dropdownMenuButton");
       idReplac.id = "superDropdown";
-      console.log(idReplac);
+      // console.log(idReplac);
 
       // 6. Добавьте атрибут data-dd со значением 3 элементу у которого существует атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
       // Обращение к атрибуту aria с заданным значением
       const attributeEl = document.querySelector(`[aria-labelledby="dropdownMenuButton"]`);
       // Добавление атрибута data с помощью dataset
       attributeEl.dataset.dd = 3;
-      console.log(attributeEl);
-      console.log(attributeEl.dataset);
+      // console.log(attributeEl);
+      // console.log(attributeEl.dataset);
      
       // 7. Удалите атрибут type у элемента с классом "dropdown-toggle".
       const dropdownTogEl = document.querySelector(".dropdown-toggle");
       // Удаление атрибута с помощью метода removeAttribute
       dropdownTogEl.removeAttribute("type");
-      console.log(dropdownTogEl);
+      // console.log(dropdownTogEl);
 
 
 
