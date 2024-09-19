@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не стирать, код с решением задачи пишем под комментарием. -->
+
+    <input id="from" type="text" />
+    В инпуте написано: <span></span>
+
+    <br />
+
+    <button class="messageBtn">Показать блок</button>
+    <div class="message">Привет :)</div>
+
+    <br />
+
+    <form>
+      <label>
+        Первый инпут:
+        <input class="form-control" type="text" />
+      </label>
+      <br />
+      <br />
+      <label>
+        Второй инпут:
+        <select class="form-control">
+          <option value=""></option>
+          <option value="1">Один</option>
+          <option value="2">Два</option>
+        </select>
+      </label>
+      <br />
+      <br />
+      <button>Отправить</button>
+    </form>
+
+    <script>
+      "use strict";
+      // 1. При изменении значения в input с id="from", значение содержащееся в нем должно моментально отображаться в span. То есть при печати в input'е тег span также должен меняться.
+      // const inputFrom = document.getElementById("from");
+      // const spanEl = document.querySelector("span");
+      // inputFrom.addEventListener("input", function (e) {
+      //   spanEl.textContent = inputFrom.value;
+      // });
+
+      // 2. При клике на кнопку с классом messageBtn необходимо элементу с классом message:
+      // - добавить два класса: animate_animated и animate_fadeInLeftBig
+      // - поставить данному элементу стиль visibility в значение 'visible'.
+      const messageBtnEl = document.querySelector(".messageBtn");
+      const messageEl = document.querySelector(".message");
+
+      // messageBtnEl.addEventListener("click", function (e) {
+      // messageEl.classList.add("animate_animated", "animate_fadeInLeftBig");
+      // console.log(messageEl);
+      // // Метод toggle добавляет или удаляет класс в зависимости от его наличия
+      // // messageEl.classList.toggle("animate_animated");
+      // // messageEl.classList.toggle("animate_fadeInLeftBig");
+      // });
+      // messageBtnEl.style.visibility = 'visible';
+      // console.log(messageBtnEl);
+
+      // 3. Необходимо при отправке формы проверить, заполнены ли все поля в этой форме. Если какое-либо поле не заполнено, форма не должна отправляться, также должны быть подсвечены незаполненные поля (необходимо поставить класс error незаполненным полям). Как только пользователь начинает заполнять какое-либо поле, необходимо, при вводе в данное поле, произвести проверку:
+      // - Если поле пустое, необходимо данное поле подсветить (поставить класс error данному полю).
+      // - Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
+
+      // Добавил класс в тег input через id
+      const inputId = document.getElementById("from");
+      inputId.classList.add("form-control");
+      const inputEl = document.querySelectorAll(".form-control");
+
+      const bodyEl = document.querySelector("body");
+      const buttonEl = document.querySelectorAll("button");
+
+      // Добавил класс send к кнопке "Отправить"
+      buttonEl.forEach((element) => {
+        if (element.innerHTML === "Отправить") {
+          element.classList.add("send");
+        }
+      });
+      const buttonSend = document.querySelector(".send");
+
+      buttonSend.addEventListener("click", function (e) {
+        inputEl.forEach((element) => {
+          if (element.value) {
+            element.style.border = "2px solid green";
+            element.classList.remove("error");
+          } else {
+            element.style.border = "2px solid red";
+            element.classList.add("error");
+            console.log(e);
+            e.preventDefault();
+          }
+        });
+      });
+      // Здравствуйте! Подскажите, как правильно выполнить задание №3?
+    </script>
+  </body>
+</html>
