@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .content {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .contentDiv {
+        width: 250px;
+        border: 1px solid #000;
+        padding: 16px;
+      }
+      .urlPicture {
+        width: 250px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="content"></div>
+
+    <script src="data.js"></script>
+
+    <script>
+      const dataBase = JSON.parse(variableData);
+      // console.log(dataBase);
+
+      const dataDogFlow = document.querySelector(".content");
+
+      dataBase.forEach((dataEl) => {
+        const divDiv = document.createElement("div");
+        divDiv.classList.add("contentDiv");
+
+        const suMessage = document.createElement("img");
+        suMessage.classList.add("urlPicture");
+        suMessage.src = dataEl.message;
+
+        const divDivDiv = document.createElement("div");
+        divDivDiv.classList.add("contentDiv2");
+
+        const sulivingOrganisms = document.createElement("p");
+        sulivingOrganisms.classList.add("animal");
+        sulivingOrganisms.textContent = dataEl.livingOrganisms;
+
+        const suName = document.createElement("h1");
+        suName.classList.add("infoName");
+        suName.textContent = dataEl.name;
+
+        // Ссылка на картинку
+        divDiv.appendChild(suMessage);
+        // второй div в первый div
+        divDiv.appendChild(divDivDiv);
+
+        //Инфа про живые организмы
+        divDivDiv.appendChild(sulivingOrganisms);
+
+        // инфа name
+        divDivDiv.appendChild(suName);
+        // Первый div в body
+        dataDogFlow.appendChild(divDiv);
+      });
+
+      console.log(dataDogFlow);
+
+      // Ссылка на ресурс https://dog.ceo/api/breeds/image/random
+      // за ранее должен сказать, что добавил данные, уточняющие.  
+    </script>
+
+  
+
+
+  </body>
+</html>
